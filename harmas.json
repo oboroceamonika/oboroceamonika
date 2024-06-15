@@ -39,6 +39,6 @@
     }
   ],
   "resolve": {"scale": {"y": "independent"}},
-  "width": 600,
+  "width": 700,
   "height": 400
 }

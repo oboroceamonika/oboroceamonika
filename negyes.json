@@ -1,38 +1,42 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-
-    "data": {
-       "url": "https://api.economicsobservatory.com/gbr/unem",
-       "format": {
-           "type":"json",
-           "property": "raw.years"}},
-
-
     "title": {
-        "text": "Unemployment level (16+)",
-        "subtitle": "United Kingdom (thousands) seasonally adjusted",
-        "subtitleFontStyle":"italic",
-        "subtitleFontSize":10,
-        "anchor": "start",
-        "color": "black"},
-
-    "width":300,
-    "height":300,
-
-    "mark":{
-        "type": "line",
-        "color":"seagreen",
-        "strokeWidth":2,
-        "opacity":1},
- 
+      "text": "Human Development Index ",
+      "subtitle": ["P21 Countries' HDI, most recent year", "Source: UN"]
+    },
+    "description": "A simple bar chart with embedded data.",
+    "data": {
+      "url": "https://raw.githubusercontent.com/oboroceamonika/oboroceamonika.github.io/main/viz.csv"
+    },
+    "layer": [{"mark": "boxplot",
     "encoding": {
-      "x": {
-          "field": "date",
-          "type": "temporal",
-          "title":null},
       "y": {
-          "field": "value",
-          "type": "quantitative",
-          "title":null}
-    }
-}
+        "field": "T_COVID_19",
+        "type": "quantitative",
+        "scale": {"type": "log"}
+      },
+      "x": {
+        "field": "DATE",
+        "type": "temporal",
+        
+      }, 
+       
+  
+    }},{"mark": {"type": "boxplot",
+    "color":"red"},
+    "encoding": {
+      "y": {
+        "field": "T_TRANS_UNIT",
+        "type": "quantitative",
+        "scale": {"type": "log"}
+      },
+      "x": {
+        "field": "DATE",
+        "type": "temporal",
+        
+      }, 
+       
+  
+    }}],"resolve": {"scale": {"y": "independent"}},
+    "width": 600
+  }

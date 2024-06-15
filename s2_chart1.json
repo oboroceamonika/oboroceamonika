@@ -13,6 +13,6 @@
    "mark": "bar",
   "encoding": {
     "x": {"field": "DATE", "type": "temporal"},
-    "y": {"aggregate": "mean", "field": "T_COVID_19"}
+    "y": {"aggregate": "sum", "field": "T_COVID_19"}
   }
 }

@@ -34,8 +34,8 @@
         "value": null,
         "on": [
           {
-            "events": "@legendSymbol:click, @legendLabel:click",
-            "update": "{value: datum.value}",
+            "events": "@legendSymbol:click, @legendLabel:click, @marks:click",
+            "update": "{value: datum.COUNTY}",
             "force": true
           }
         ]
@@ -232,7 +232,7 @@
         "name": "marks",
         "type": "symbol",
         "from": {"data": "source"},
-        "interactive": false,
+        "interactive": true,
         "encode": {
           "update": {
             "x": {"scale": "x", "field": "WAGE"},

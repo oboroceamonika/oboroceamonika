@@ -14,8 +14,8 @@
       {
         "mark": "point",
         "encoding": {
-          "x": {"aggregate": "mean", "field": "T_TRANS_UNIT"},
-          "y": {"aggregate": "mean", "field": "UNEMP_RATE"},
+          "x": {"aggregate": "mean", "field": "UNEMP_RATE"},
+          "y": {"aggregate": "mean", "field": "T_TRANS_UNIT"},
           "detail": {"field": "DATE"}
         }
       },
@@ -25,8 +25,12 @@
           "dy": -10  
         },
         "encoding": {
-          "x": {"aggregate": "mean", "field": "T_TRANS_UNIT"},
-          "y": {"aggregate": "mean", "field": "UNEMP_RATE"},
+          "x": {"aggregate": "mean", "field": "UNEMP_RATE",
+          "type": "quantitative",
+          "scale": {"domainMin": 5}},
+          "y": {"aggregate": "mean", "field": "T_TRANS_UNIT",
+          "type": "quantitative",
+          "scale": {"domainMin": 0.15}},
           "text": {"field": "DATE"}
         }
       }

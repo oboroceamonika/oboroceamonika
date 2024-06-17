@@ -1,9 +1,5 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": {
-      "text": "Human Development Index ",
-      "subtitle": ["P21 Countries' HDI, most recent year", "Source: UN"]
-    },
     "description": "A simple bar chart with embedded data.",
     "data": {
       "url": "https://raw.githubusercontent.com/oboroceamonika/oboroceamonika.github.io/main/viz.csv"

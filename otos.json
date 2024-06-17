@@ -1,0 +1,80 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+      "text": "Human Development Index",
+      "subtitle": ["P21 Countries' HDI, most recent year", "Source: UN"]
+    },
+    "description": "A simple bar chart with embedded data.",
+    "data": {
+      "url": "https://raw.githubusercontent.com/oboroceamonika/oboroceamonika.github.io/main/viz.csv"
+    },
+    "width": 700,
+    "height": 600,
+    "transform": [
+      {"calculate": "log(datum.T_TRANS_UNIT + 1)", "as": "log_T_TRANS_UNIT"},
+      {"calculate": "log(datum.T_COVID_19 + 1)", "as": "log_T_COVID_19"},
+      {
+        "window": [{"op": "mean", "field": "log_T_TRANS_UNIT", "as": "mean_log_T_TRANS_UNIT"}],
+        "frame": [null, null]
+      },
+      {
+        "window": [{"op": "mean", "field": "log_T_COVID_19", "as": "mean_log_T_COVID_19"}],
+        "frame": [null, null]
+      },
+      {
+        "window": [{"op": "stdev", "field": "log_T_TRANS_UNIT", "as": "stdev_log_T_TRANS_UNIT"}],
+        "frame": [null, null]
+      },
+      {
+        "window": [{"op": "stdev", "field": "log_T_COVID_19", "as": "stdev_log_T_COVID_19"}],
+        "frame": [null, null]
+      },
+      {
+        "calculate": "(datum.log_T_TRANS_UNIT - datum.mean_log_T_TRANS_UNIT) / datum.stdev_log_T_TRANS_UNIT",
+        "as": "standardized_log_T_TRANS_UNIT"
+      },
+      {
+        "calculate": "(datum.log_T_COVID_19 - datum.mean_log_T_COVID_19) / datum.stdev_log_T_COVID_19",
+        "as": "standardized_log_T_COVID_19"
+      }
+    ],
+    "encoding": {
+      "x": {
+        "field": "standardized_log_T_TRANS_UNIT",
+        "type": "quantitative",
+        "axis": {"title": "Standardized Log of T_TRANS_UNIT"}
+      },
+      "y": {
+        "field": "standardized_log_T_COVID_19",
+        "type": "quantitative",
+        "axis": {"title": "Standardized Log of T_COVID_19"}
+      },
+      "color": {"field": "COUNTY", "type": "nominal"},
+      "tooltip": [
+        {"field": "COUNTY", "type": "nominal"},
+        {"field": "T_TRANS_UNIT", "type": "quantitative"},
+        {"field": "T_COVID_19", "type": "quantitative"}
+      ]
+    },
+    "layer": [
+      {
+        "mark": {
+          "type": "point",
+          "filled": true,
+          "size": 100,
+          "opacity": 0.7
+        }
+      },
+      {
+        "mark": {
+          "type": "text",
+          "dy": -10,
+          "fontSize": 10,
+          "align": "center"
+        },
+        "encoding": {
+          "text": {"field": "COUNTY"}
+        }
+      }
+    ]
+  }

@@ -127,6 +127,16 @@
         <figure id="Location5"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
     </section>
 
+    <section>
+        <div class="chart-description">
+            <h2>Tranzakciós volumen és munkanélküliségi ráta</h2>
+            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
+                Egyenes irányú kapcsolatot látunk, nagy a korrelációs együttható. 
+            </p>
+        </div>
+        <figure id="Location7"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+    </section>
+
     <!-- Do you want to add more sections? -->
         <!-- Try copying pasting the section above -->
         <!-- You'll need to change the id of the figure "<figure id="Location3"... -->
@@ -143,6 +153,7 @@
         var figure_4_spec = "hatos.json";
         var figure_5_spec = "hetes.json";
         var figure_6_spec = "nyolcas.json";
+        var figure_7_spec = "kilences.json";
         
         vegaEmbed('#Location1', figure_1_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1
         vegaEmbed('#Location2', figure_2_spec)
@@ -150,6 +161,7 @@
         vegaEmbed('#Location4', figure_4_spec)
         vegaEmbed('#Location5', figure_5_spec)
         vegaEmbed('#Location6', figure_6_spec)
+        vegaEmbed('#Location7', figure_7_spec)
 
         // Do you want to add more graphs?
         // try defining a new variable for figure_3_spec, adding VegaEmbed for Location3, and adding a new section in the HTML

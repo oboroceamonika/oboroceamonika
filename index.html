@@ -50,7 +50,7 @@
     </h3>
     </h3>
     <h3 class="small">
-        Függő változó: Ezer lakosra jutó lakásadásvételi tranzakciók volumene (forrás: Országos Kataszteri és Ingatlan-nyilvántartási Hivatal).
+        Függő változó: Ezer lakosra jutó lakásadásvételek volumene (forrás: Országos Kataszteri és Ingatlan-nyilvántartási Hivatal).
     </h3>
     <h3 class="small">
         Független változó: Ezer lakosra jutó új fertőzések száma (forrás: Országos Közegészségügyi Igazgatóság).
@@ -79,17 +79,7 @@
 
     <section>
         <div class="chart-description"> <!-- we are grouping the title and description together so we can style them together -->
-            <h2>A megyék teljesítménye</h2>
-            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                A legtöbb esetszám és a legtöbb fertőzési szám a gazdasági húzóerőnek számító megyékben vannak. 
-            </p>
-        </div>
-        <figure id="Location2"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
-    </section>
-
-    <section>
-        <div class="chart-description"> <!-- we are grouping the title and description together so we can style them together -->
-            <h2>A függő és a független változók együttmozgása és a kiugró értékek</h2>
+            <h2>A függő és a független változók együttmozgása, kiugró értékek</h2>
             <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
                 A piros boxplot a tranzakciós számának qvartiliseit és kiugró értékeit jelöli. A kék boxplot a fertőzési esetszámokhoz tartozik.
             </p>
@@ -99,9 +89,19 @@
 
     <section>
         <div class="chart-description"> <!-- we are grouping the title and description together so we can style them together -->
+            <h2>A megyék teljesítménye</h2>
+            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
+                A legtöbb tranzakciós és a legtöbb fertőzés a gazdasági húzóerőnek számító megyékben voltak. A két változó egyenes irányú kapcsolatban van. 
+            </p>
+        </div>
+        <figure id="Location2"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+    </section>
+
+    <section>
+        <div class="chart-description"> <!-- we are grouping the title and description together so we can style them together -->
             <h2>A tranzakciós volumen és az átlagjövedelem kapcsolata</h2>
             <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                A legtöbb megyében az átlagjövedelem a vizsgált időszakban nettó 2500-3000 lej között mozgott és az ezer főre jutó tranzakciós volumen 0.3 - 0.5. Kivételek: pl. Kolozs, Brassó megye, Bukarest.
+                A legtöbb megyében az átlagjövedelem a vizsgált időszakban nettó 2500-3000 lej között mozgott és az ezer főre jutó tranzakciós volumen 0.3-0.5 között. Kivételek: pl. Kolozs, Brassó megye, Bukarest.
             </p>
         </div>
         <figure id="Location6"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->

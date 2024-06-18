@@ -4,7 +4,7 @@
     "data": {
       "url": "https://raw.githubusercontent.com/oboroceamonika/oboroceamonika.github.io/main/viz.csv"
     },
-    "width": 700,
+    "width": 600,
     "height": 600,
     "transform": [
       {"calculate": "log(datum.T_TRANS_UNIT + 1)", "as": "log_T_TRANS_UNIT"},
